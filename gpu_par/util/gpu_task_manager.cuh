@@ -11,7 +11,7 @@
 #include "gpu_par/data_collections/device_task_data.cuh"
 #include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
 #include "gpu_par/data_collections/host_task_data.cuh"
-#include "gpu_par/kernel_func/function_ptrs.cuh"
+#include "gpu_par/kernel/function_ptrs.cuh"
 
 namespace luck {
 namespace gpu {
@@ -24,7 +24,7 @@ class GPUTaskManager {
  private:
   using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
   using HostTaskData = luck::gpu::data::host::HostTaskData;
-  using KernelWrap = luck::gpu::kernel_func::KernelWrap;
+  using KernelWrap = luck::gpu::kernel::KernelWrap;
 
  public:
   GPUTaskManager() = default;

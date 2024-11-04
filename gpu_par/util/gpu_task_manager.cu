@@ -1,9 +1,9 @@
-#include "gpu_par/gpu_task_manager.cuh"
+#include "gpu_par/util/gpu_task_manager.cuh"
 
 namespace luck {
 namespace gpu {
 
-using KernelWrap = luck::gpu::kernel_func::KernelWrap;
+using KernelWrap = luck::gpu::kernel::KernelWrap;
 using HostTaskData = luck::gpu::data::host::HostTaskData;
 using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
 using HostMatrixData = luck::gpu::data::host::HostMatrixData;

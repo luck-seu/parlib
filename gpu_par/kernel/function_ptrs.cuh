@@ -9,7 +9,7 @@
 
 namespace luck {
 namespace gpu {
-namespace kernel_func {
+namespace kernel {
 
 using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
 
@@ -19,9 +19,10 @@ using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
 //    device_output: Pointer to the output DeviceOwnedBuffer on device
 //    stream: Reference to the CUDA stream for asynchronous execution
 typedef void (*KernelWrap)(const cudaStream_t& stream,
-                           DeviceTaskData* device_input, DeviceTaskData* device_args,
+                           DeviceTaskData* device_input,
+                           DeviceTaskData* device_args,
                            DeviceTaskData* device_output);
-}  // namespace kernel_func
+}  // namespace kernel
 }  // namespace gpu
 }  // namespace luck
 

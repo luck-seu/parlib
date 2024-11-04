@@ -39,21 +39,21 @@ endif ()
 #######################
 file(GLOB GPU_PAR_SOURCES
         "${GPU_PROJECT_ROOT_DIR}/*.cu"
-        "${GPU_PROJECT_ROOT_DIR}/app/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/device_data_collections/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/host_data_collections/*.cu"
-        "${GPU_PROJECT_ROOT_DIR}/kernel_func/*.cu"
+        "${GPU_PROJECT_ROOT_DIR}/kernel/*.cu"
+        "${GPU_PROJECT_ROOT_DIR}/kernel/matrix_mul/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/util/*.cu"
         )
 
 file(GLOB GPU_PAR_HEADERS
         "${GPU_PROJECT_ROOT_DIR}/*.cuh"
-        "${GPU_PROJECT_ROOT_DIR}/app/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/device_data_collections/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/host_data_collections/*.cuh"
-        "${GPU_PROJECT_ROOT_DIR}/kernel_func/*.cuh"
+        "${GPU_PROJECT_ROOT_DIR}/kernel/*.cuh"
+        "${GPU_PROJECT_ROOT_DIR}/kernel/matrix_mul/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/util/*.cuh"
         )
 
