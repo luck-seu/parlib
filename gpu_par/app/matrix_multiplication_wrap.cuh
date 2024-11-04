@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#include "gpu/data_collections/device_data_collections/matrix_mul_device_task_data.cuh"
+#include "gpu_par/data_collections/device_data_collections/matrix_mul_device_task_data.cuh"
 
 namespace luck {
 namespace gpu {

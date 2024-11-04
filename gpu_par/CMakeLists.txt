@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(graph_sys_gpu LANGUAGES CUDA)
+project(parlib_gpu_par LANGUAGES CUDA)
 
 #######################
 # Cmake options
@@ -37,7 +37,7 @@ endif ()
 #######################
 # Artifacts
 #######################
-file(GLOB GPU_SOURCES
+file(GLOB GPU_PAR_SOURCES
         "${GPU_PROJECT_ROOT_DIR}/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/app/*.cu"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/*.cu"
@@ -47,7 +47,7 @@ file(GLOB GPU_SOURCES
         "${GPU_PROJECT_ROOT_DIR}/util/*.cu"
         )
 
-file(GLOB GPU_HEADERS
+file(GLOB GPU_PAR_HEADERS
         "${GPU_PROJECT_ROOT_DIR}/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/app/*.cuh"
         "${GPU_PROJECT_ROOT_DIR}/data_collections/*.cuh"
@@ -57,4 +57,4 @@ file(GLOB GPU_HEADERS
         "${GPU_PROJECT_ROOT_DIR}/util/*.cuh"
         )
 
-add_library(graph_sys_gpu ${GPU_SOURCES} ${GPU_HEADERS})
+add_library(lib_gpu_par ${GPU_PAR_SOURCES} ${GPU_PAR_HEADERS})

@@ -6,7 +6,7 @@
 #include <chrono>
 #include <iostream>
 
-#include "multithreading/thread_pool.h"
+#include "cpu_par/thread_pool.h"
 
 namespace seu::luck::hybridcomp::client {
 

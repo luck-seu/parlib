@@ -1,4 +1,4 @@
-#include "gpu/gpu_task_manager.cuh"
+#include "gpu_par/gpu_task_manager.cuh"
 
 namespace luck {
 namespace gpu {

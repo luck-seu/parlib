@@ -1,7 +1,7 @@
 #ifndef CORE_COMMON_MULTITHREADING_TASKRUNNER_H_
 #define CORE_COMMON_MULTITHREADING_TASKRUNNER_H_
 
-#include "task.h"
+#include "cpu_par/task.h"
 
 
 namespace com::graph::core::common {

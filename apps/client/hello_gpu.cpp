@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "miniclean/flat_matrix_generator.h"
-#include "miniclean/matrix_multiplication_gpu.h"
+#include "apps/flat_matrix_generator.h"
+#include "apps/matrix_multiplication_gpu.h"
 
 DEFINE_uint64(n_rows, 3, "Row number of the matrix");
 DEFINE_uint64(n_cols, 3, "Column number of the matrix");

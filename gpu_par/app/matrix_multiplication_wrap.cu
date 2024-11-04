@@ -1,4 +1,4 @@
-#include "gpu/app/matrix_multiplication_wrap.cuh"
+#include "gpu_par/app/matrix_multiplication_wrap.cuh"
 
 namespace luck {
 namespace gpu {

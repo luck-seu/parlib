@@ -7,11 +7,11 @@
 #include <mutex>
 #include <unordered_map>
 
-#include "gpu/data_collections/device_data_collections/matrix_mul_device_task_data.cuh"
-#include "gpu/data_collections/device_task_data.cuh"
-#include "gpu/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
-#include "gpu/data_collections/host_task_data.cuh"
-#include "gpu/kernel_func/function_ptrs.cuh"
+#include "gpu_par/data_collections/device_data_collections/matrix_mul_device_task_data.cuh"
+#include "gpu_par/data_collections/device_task_data.cuh"
+#include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
+#include "gpu_par/data_collections/host_task_data.cuh"
+#include "gpu_par/kernel_func/function_ptrs.cuh"
 
 namespace luck {
 namespace gpu {

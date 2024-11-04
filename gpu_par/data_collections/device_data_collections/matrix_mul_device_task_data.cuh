@@ -4,10 +4,10 @@
 #include <cuda_runtime.h>
 #include <stdint.h>
 
-#include "gpu/data_collections/device_buffer.cuh"
-#include "gpu/data_collections/device_task_data.cuh"
-#include "gpu/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
-#include "gpu/util/cuda_check.cuh"
+#include "gpu_par/data_collections/device_buffer.cuh"
+#include "gpu_par/data_collections/device_task_data.cuh"
+#include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
+#include "gpu_par/util/cuda_check.cuh"
 
 namespace luck {
 namespace gpu {

@@ -4,8 +4,8 @@
 #include <cuda_runtime.h>
 #include <stdint.h>
 
-#include "gpu/data_collections/host_buffer.cuh"
-#include "gpu/util/cuda_check.cuh"
+#include "gpu_par/data_collections/host_buffer.cuh"
+#include "gpu_par/util/cuda_check.cuh"
 
 namespace luck {
 namespace gpu {

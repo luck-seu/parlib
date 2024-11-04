@@ -6,10 +6,10 @@
 #include <chrono>
 #include <iostream>
 
-#include "gpu/app/matrix_multiplication_wrap.cuh"
-#include "gpu/gpu_task_manager.cuh"
-#include "gpu/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
-#include "multithreading/thread_pool.h"
+#include "gpu_par/app/matrix_multiplication_wrap.cuh"
+#include "gpu_par/gpu_task_manager.cuh"
+#include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
+#include "cpu_par/thread_pool.h"
 
 namespace luck::hybridcomp::client {
 
