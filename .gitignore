@@ -1,0 +1,13 @@
+# Directories
+bin
+lib
+build
+cmake-build-debug
+cmake-build-release
+.idea
+.vscode
+.DS_Store
+__pycache__
+
+# Auxiliary files
+./Makefile

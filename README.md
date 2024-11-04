@@ -1,1 +1,1 @@
-# cpu-gpu-collaboration-framework
+# ParLib: An Uniform Library for Hybrid Parallelism
