@@ -11,9 +11,8 @@ DEFINE_uint64(ub, 100, "Upper bound of the random number");
 DEFINE_uint64(lb, 0, "Lower bound of the random number");
 DEFINE_uint64(rand_seed, 0, "Random seed for matrix generation");
 
-using FlatMatrixGenerator = luck::hybridcomp::client::FlatMatrixGenerator;
-using MatrixMultiplicationGPU =
-    luck::hybridcomp::client::MatrixMultiplicationGPU;
+using FlatMatrixGenerator = luck::parlib::apps::FlatMatrixGenerator;
+using MatrixMultiplicationGPU = luck::parlib::apps::MatrixMultiplicationGPU;
 
 int main(int argc, char* argv[]) {
   gflags::ParseCommandLineFlags(&argc, &argv, true);

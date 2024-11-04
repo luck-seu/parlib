@@ -1,9 +1,6 @@
 #include "gpu_par/data_collections/device_data_collections/matrix_mul_device_task_data.cuh"
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace device {
+namespace luck::parlib::gpu::data::device {
 
 void MatrixMulInputDeviceTaskData::SetData(
     const host::MatrixMulHostTaskData& host_data, const cudaStream_t& stream) {
@@ -34,7 +31,4 @@ void MatrixMulOutputDeviceTaskData::SetData(
   result_matrix.Init(host_data.data, stream);
 }
 
-}  // namespace device
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::device

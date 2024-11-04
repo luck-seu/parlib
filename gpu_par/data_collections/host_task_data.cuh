@@ -1,18 +1,12 @@
-#ifndef GPU_DATA_STRUCTURES_HOST_TASK_DATA_CUH
-#define GPU_DATA_STRUCTURES_HOST_TASK_DATA_CUH
+#ifndef GPU_PAR_DATA_STRUCTURES_HOST_TASK_DATA_CUH
+#define GPU_PAR_DATA_STRUCTURES_HOST_TASK_DATA_CUH
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace host {
+namespace luck::parlib::gpu::data::host {
 
 class HostTaskData {
  public:
   HostTaskData() = default;
 };
-}  // namespace host
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::host
 
-#endif  // GPU_DATA_STRUCTURES_HOST_TASK_DATA_CUH
+#endif  // GPU_PAR_DATA_STRUCTURES_HOST_TASK_DATA_CUH

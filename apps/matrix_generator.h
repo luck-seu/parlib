@@ -1,12 +1,12 @@
-#ifndef CLIENT_MATRIX_GENERATOR_H
-#define CLIENT_MATRIX_GENERATOR_H
+#ifndef APPS_MATRIX_GENERATOR_H
+#define APPS_MATRIX_GENERATOR_H
 
 #include <stdint.h>
 
 #include <iostream>
 #include <random>
 
-namespace seu::luck::hybridcomp::client {
+namespace luck::parlib::apps {
 
 class MatrixGenerator {
  public:
@@ -77,6 +77,6 @@ class MatrixGenerator {
 
   uint64_t** matrix_transpose_;
 };
-}  // namespace seu::luck::hybridcomp::client
+}  // namespace luck::parlib::apps
 
-#endif  // CLIENT_MATRIX_GENERATOR_H
+#endif  // APPS_MATRIX_GENERATOR_H

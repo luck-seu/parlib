@@ -1,5 +1,5 @@
-#ifndef GPU_GPU_TASK_MANAGER_CUH
-#define GPU_GPU_TASK_MANAGER_CUH
+#ifndef GPU_PAR_UTIL_GPU_TASK_MANAGER_CUH
+#define GPU_PAR_UTIL_GPU_TASK_MANAGER_CUH
 
 #include <cuda_runtime.h>
 #include <stdint.h>
@@ -13,8 +13,7 @@
 #include "gpu_par/data_collections/host_task_data.cuh"
 #include "gpu_par/kernel/function_ptrs.cuh"
 
-namespace luck {
-namespace gpu {
+namespace luck::parlib::gpu::util {
 
 enum DeviceTaskType {
   kMatrixMultiplication = 1,
@@ -22,9 +21,9 @@ enum DeviceTaskType {
 
 class GPUTaskManager {
  private:
-  using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
-  using HostTaskData = luck::gpu::data::host::HostTaskData;
-  using KernelWrap = luck::gpu::kernel::KernelWrap;
+  using DeviceTaskData = luck::parlib::gpu::data::device::DeviceTaskData;
+  using HostTaskData = luck::parlib::gpu::data::host::HostTaskData;
+  using KernelWrap = luck::parlib::gpu::kernel::KernelWrap;
 
  public:
   GPUTaskManager() = default;
@@ -99,7 +98,6 @@ class GPUTaskManager {
   std::unordered_map<size_t, DeviceTaskData*> output_ptr_by_task_id_;
 };
 
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::util
 
-#endif  // GPU_GPU_TASK_MANAGER_CUH
+#endif  // GPU_PAR_UTIL_GPU_TASK_MANAGER_CUH

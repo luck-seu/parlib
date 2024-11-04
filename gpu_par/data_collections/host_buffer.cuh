@@ -1,12 +1,9 @@
-#ifndef GPU_DATA_STRUCTURES_HOST_BUFFER_CUH
-#define GPU_DATA_STRUCTURES_HOST_BUFFER_CUH
+#ifndef GPU_PAR_DATA_STRUCTURES_HOST_BUFFER_CUH
+#define GPU_PAR_DATA_STRUCTURES_HOST_BUFFER_CUH
 
 #include <stdint.h>
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace host {
+namespace luck::parlib::gpu::data::host {
 
 // Remark: `HostBuffer` does not own the data.
 template <typename T>
@@ -20,9 +17,6 @@ struct HostBuffer {
 
   uint64_t GetElementSize() const { return sizeof(T); }
 };
-}  // namespace host
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::host
 
-#endif  // GPU_DATA_STRUCTURES_HOST_BUFFER_CUH
+#endif  // GPU_PAR_DATA_STRUCTURES_HOST_BUFFER_CUH

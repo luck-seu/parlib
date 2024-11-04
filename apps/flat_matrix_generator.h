@@ -1,12 +1,12 @@
-#ifndef CLIENT_FLAT_MATRIX_GENERATOR_H
-#define CLIENT_FLAT_MATRIX_GENERATOR_H
+#ifndef APPS_FLAT_MATRIX_GENERATOR_H
+#define APPS_FLAT_MATRIX_GENERATOR_H
 
 #include <stdint.h>
 
 #include <iostream>
 #include <random>
 
-namespace luck::hybridcomp::client {
+namespace luck::parlib::apps {
 
 class FlatMatrixGenerator {
  public:
@@ -60,6 +60,6 @@ class FlatMatrixGenerator {
 
   uint32_t* matrix_transpose_;
 };
-}  // namespace seu::luck::hybridcomp::client
+}  // namespace luck::parlib::apps
 
-#endif  // CLIENT_FLAT_MATRIX_GENERATOR_H
+#endif  // APPS_FLAT_MATRIX_GENERATOR_H

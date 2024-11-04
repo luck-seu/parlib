@@ -1,5 +1,5 @@
-#ifndef GPU_UTIL_CUDA_CHECK_CUH_
-#define GPU_UTIL_CUDA_CHECK_CUH_
+#ifndef GPU_PAR_UTIL_CUDA_CHECK_CUH_
+#define GPU_PAR_UTIL_CUDA_CHECK_CUH_
 
 #include <iostream>
 
@@ -23,4 +23,4 @@ static void LogDebug(const std::string& str, const char* file, int line) {
 
 #define CUDA_LOG_DEBUG(info) LogDebug(info, __FILE__, __LINE__)
 
-#endif  // GPU_UTIL_CUDA_CHECK_CUH_
+#endif  // GPU_PAR_UTIL_CUDA_CHECK_CUH_

@@ -1,11 +1,11 @@
-#ifndef CORE_COMMON_MULTITHREADING_THREADPOOL_H_
-#define CORE_COMMON_MULTITHREADING_THREADPOOL_H_
+#ifndef CPU_PAR_THREADPOOL_H_
+#define CPU_PAR_THREADPOOL_H_
 
 #include <folly/executors/CPUThreadPoolExecutor.h>
 
 #include "cpu_par/task_runner.h"
 
-namespace com::graph::core::common {
+namespace luck::parlib::cpu {
 
 // A wrapper of `folly::CPUThreadPoolExecutor` class, adapting it to the
 // `TaskRunner` interface.
@@ -43,6 +43,6 @@ class ThreadPool final : public TaskRunner {
   folly::CPUThreadPoolExecutor internal_pool_;
 };
 
-}  // namespace com::graph::core::common
+}  // namespace luck::parlib::cpu
 
-#endif  // CORE_COMMON_MULTITHREADING_THREADPOOL_H_
+#endif  // CPU_PAR_THREADPOOL_H_

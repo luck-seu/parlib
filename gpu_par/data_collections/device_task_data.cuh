@@ -1,13 +1,10 @@
-#ifndef GPU_DATA_STRUCTURES_GPU_TASK_DATA_CUH
-#define GPU_DATA_STRUCTURES_GPU_TASK_DATA_CUH
+#ifndef GPU_PAR_DATA_STRUCTURES_GPU_TASK_DATA_CUH
+#define GPU_PAR_DATA_STRUCTURES_GPU_TASK_DATA_CUH
 
 #include <cuda_runtime.h>
 #include <stdint.h>
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace device {
+namespace luck::parlib::gpu::data::device {
 
 // @Description: Class to store common task data for GPU execution.
 // A GPU task might have multiple DeviceOwnedBuffer class. It is output of
@@ -24,9 +21,6 @@ class DeviceTaskData {
  protected:
   uint64_t task_id_;
 };
-}  // namespace device
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::device
 
-#endif  // GPU_DATA_STRUCTURES_GPU_TASK_DATA_CUH
+#endif  // GPU_PAR_DATA_STRUCTURES_GPU_TASK_DATA_CUH

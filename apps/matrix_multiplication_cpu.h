@@ -1,5 +1,5 @@
-#ifndef CLIENT_MATRIX_MULTIPLICATION_CPU_H
-#define CLIENT_MATRIX_MULTIPLICATION_CPU_H
+#ifndef APPS_MATRIX_MULTIPLICATION_CPU_H
+#define APPS_MATRIX_MULTIPLICATION_CPU_H
 
 #include <stdint.h>
 
@@ -8,13 +8,13 @@
 
 #include "cpu_par/thread_pool.h"
 
-namespace seu::luck::hybridcomp::client {
+namespace luck::parlib::apps {
 
 class MatrixMultiplicationCPU {
  private:
-  using Task = com::graph::core::common::Task;
-  using TaskPackage = com::graph::core::common::TaskPackage;
-  using ThreadPool = com::graph::core::common::ThreadPool;
+  using Task = luck::parlib::cpu::Task;
+  using TaskPackage = luck::parlib::cpu::TaskPackage;
+  using ThreadPool = luck::parlib::cpu::ThreadPool;
 
  public:
   MatrixMultiplicationCPU(uint64_t parallelism, uint64_t n_workers)
@@ -98,6 +98,6 @@ class MatrixMultiplicationCPU {
   ThreadPool thread_pool_;
   uint64_t n_workers_;
 };
-}  // namespace seu::luck::hybridcomp::client
+}  // namespace luck::parlib::apps
 
-#endif  // CLIENT_MATRIX_MULTIPLICATION_CPU_H
+#endif  // APPS_MATRIX_MULTIPLICATION_CPU_H

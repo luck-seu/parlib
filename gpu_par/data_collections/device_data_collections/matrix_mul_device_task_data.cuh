@@ -1,5 +1,5 @@
-#ifndef LUCK_GPU_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH
-#define LUCK_GPU_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH
+#ifndef GPU_PAR_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH
+#define GPU_PAR_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH
 
 #include <cuda_runtime.h>
 #include <stdint.h>
@@ -9,10 +9,7 @@
 #include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
 #include "gpu_par/util/cuda_check.cuh"
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace device {
+namespace luck::parlib::gpu::data::device {
 
 class MatrixMulInputDeviceTaskData : public DeviceTaskData {
  public:
@@ -37,13 +34,10 @@ class MatrixMulOutputDeviceTaskData : public DeviceTaskData {
   void SetData(const host::HostMatrixData& host_data,
                const cudaStream_t& stream);
 
- DeviceOwnedBuffer<uint32_t> result_matrix;
- uint32_t n_rows_;
- uint32_t n_cols_;
+  DeviceOwnedBuffer<uint32_t> result_matrix;
+  uint32_t n_rows_;
+  uint32_t n_cols_;
 };
-}  // namespace device
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::device
 
-#endif  // LUCK_GPU_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH
+#endif  // GPU_PAR_DATA_COLLECTIONS_DEVICE_DATA_COLLECTIONS_MATRIX_MUL_DEVICE_TASK_DATA_CUH

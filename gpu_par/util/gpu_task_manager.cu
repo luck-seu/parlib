@@ -1,17 +1,16 @@
 #include "gpu_par/util/gpu_task_manager.cuh"
 
-namespace luck {
-namespace gpu {
+namespace luck::parlib::gpu::util {
 
-using KernelWrap = luck::gpu::kernel::KernelWrap;
-using HostTaskData = luck::gpu::data::host::HostTaskData;
-using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
-using HostMatrixData = luck::gpu::data::host::HostMatrixData;
-using MatrixMulHostTaskData = luck::gpu::data::host::MatrixMulHostTaskData;
+using KernelWrap = luck::parlib::gpu::kernel::KernelWrap;
+using HostTaskData = luck::parlib::gpu::data::host::HostTaskData;
+using DeviceTaskData = luck::parlib::gpu::data::device::DeviceTaskData;
+using HostMatrixData = luck::parlib::gpu::data::host::HostMatrixData;
+using MatrixMulHostTaskData = luck::parlib::gpu::data::host::MatrixMulHostTaskData;
 using MatrixMulInputDeviceTaskData =
-    luck::gpu::data::device::MatrixMulInputDeviceTaskData;
+    luck::parlib::gpu::data::device::MatrixMulInputDeviceTaskData;
 using MatrixMulOutputDeviceTaskData =
-    luck::gpu::data::device::MatrixMulOutputDeviceTaskData;
+    luck::parlib::gpu::data::device::MatrixMulOutputDeviceTaskData;
 
 GPUTaskManager::~GPUTaskManager() {
   for (auto iter = streams_by_task_id_.begin();
@@ -273,5 +272,4 @@ void GPUTaskManager::TransferResultFromDevice2Host(
   }
 }
 
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::util

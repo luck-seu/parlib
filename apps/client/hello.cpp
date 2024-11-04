@@ -13,9 +13,9 @@ DEFINE_uint64(rand_seed, 0, "Random seed for matrix generation");
 DEFINE_uint64(parallelism, 1, "Number of threads for matrix multiplication");
 DEFINE_uint64(n_workers, 1, "Number of workers");
 
-using MatrixGenerator = seu::luck::hybridcomp::client::MatrixGenerator;
+using MatrixGenerator = luck::parlib::apps::MatrixGenerator;
 using MatrixMultiplicationCPU =
-    seu::luck::hybridcomp::client::MatrixMultiplicationCPU;
+    luck::parlib::apps::MatrixMultiplicationCPU;
 
 int main(int argc, char* argv[]) {
   gflags::ParseCommandLineFlags(&argc, &argv, true);

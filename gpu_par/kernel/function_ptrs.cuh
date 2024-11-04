@@ -1,5 +1,5 @@
-#ifndef GPU_FUNCTION_PTRS_CUH
-#define GPU_FUNCTION_PTRS_CUH
+#ifndef GPU_PAR_KERNEL_FUNCTION_PTRS_CUH
+#define GPU_PAR_KERNEL_FUNCTION_PTRS_CUH
 
 #include <cuda_runtime.h>
 
@@ -7,11 +7,9 @@
 #include "gpu_par/data_collections/device_task_data.cuh"
 #include "gpu_par/data_collections/host_buffer.cuh"
 
-namespace luck {
-namespace gpu {
-namespace kernel {
+namespace luck::parlib::gpu::kernel {
 
-using DeviceTaskData = luck::gpu::data::device::DeviceTaskData;
+using DeviceTaskData = luck::parlib::gpu::data::device::DeviceTaskData;
 
 // Typedef for function pointer to wrap kernel function
 // @Parameters:
@@ -22,8 +20,6 @@ typedef void (*KernelWrap)(const cudaStream_t& stream,
                            DeviceTaskData* device_input,
                            DeviceTaskData* device_args,
                            DeviceTaskData* device_output);
-}  // namespace kernel
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::kernel
 
-#endif  // GPU_FUNCTION_PTRS_CUH
+#endif  // GPU_PAR_KERNEL_FUNCTION_PTRS_CUH

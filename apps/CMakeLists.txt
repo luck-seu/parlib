@@ -10,6 +10,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_ROOT_DIR}/lib)
 include_directories(
         ${PROJECT_ROOT_DIR}
         ${PROJECT_ROOT_DIR}/cpu_par
+        ${PROJECT_ROOT_DIR}/gpu_par
         ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
 )
 

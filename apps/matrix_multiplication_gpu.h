@@ -1,30 +1,35 @@
-#ifndef CLIENT_MATRIX_MULTIPLICATION_CPU_H
-#define CLIENT_MATRIX_MULTIPLICATION_CPU_H
+#ifndef APPS_MATRIX_MULTIPLICATION_CPU_H
+#define APPS_MATRIX_MULTIPLICATION_CPU_H
 
 #include <stdint.h>
 
 #include <chrono>
 #include <iostream>
 
+#include "cpu_par/thread_pool.h"
+#include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
 #include "gpu_par/kernel/matrix_mul/matrix_multiplication_wrap.cuh"
 #include "gpu_par/util/gpu_task_manager.cuh"
-#include "gpu_par/data_collections/host_data_collections/matrix_mul_host_task_data.cuh"
-#include "cpu_par/thread_pool.h"
 
-namespace luck::hybridcomp::client {
+namespace luck::parlib::apps {
 
 class MatrixMultiplicationGPU {
  private:
-  using GPUTaskManager = luck::gpu::GPUTaskManager;
-  using MatrixMulHostTaskData = luck::gpu::data::host::MatrixMulHostTaskData;
-  using HostMatrixData = luck::gpu::data::host::HostMatrixData;
+  using GPUTaskManager = luck::parlib::gpu::util::GPUTaskManager;
+  using MatrixMulHostTaskData =
+      luck::parlib::gpu::data::host::MatrixMulHostTaskData;
+  using HostMatrixData = luck::parlib::gpu::data::host::HostMatrixData;
+  using DeviceTaskType = luck::parlib::gpu::util::DeviceTaskType;
+  using MatrixMultiplicationWrap =
+      luck::parlib::gpu::kernel::matrix_mul::MatrixMultiplicationWrap;
 
  public:
   MatrixMultiplicationGPU() = default;
 
   ~MatrixMultiplicationGPU() { DistoryResult(); }
 
-  void Mul(uint32_t* lhs, uint32_t* rhs, uint32_t lhs_n_rows, uint32_t lhs_n_cols) {
+  void Mul(uint32_t* lhs, uint32_t* rhs, uint32_t lhs_n_rows,
+           uint32_t lhs_n_cols) {
     std::cout << "[MM-GPU] Start " << "(" << lhs_n_rows << ", " << lhs_n_cols
               << ")" << " X " << "(" << lhs_n_cols << ", " << lhs_n_rows
               << ")"
@@ -41,10 +46,10 @@ class MatrixMultiplicationGPU {
 
     GPUTaskManager gpu_task_manager;
     auto start = std::chrono::system_clock::now();
-    gpu_task_manager.SubmitTaskSync(0, luck::gpu::DeviceTaskType::kMatrixMultiplication,
-                                    luck::gpu::app::MatrixMultiplicationWrap::Do,
-                                    &host_input, nullptr, &host_output, 0);
-                                        auto end = std::chrono::system_clock::now();
+    gpu_task_manager.SubmitTaskSync(0, DeviceTaskType::kMatrixMultiplication,
+                                    MatrixMultiplicationWrap::Do, &host_input,
+                                    nullptr, &host_output, 0);
+    auto end = std::chrono::system_clock::now();
     double duration = std::chrono::duration<double>(end - start).count();
     std::cout << "[MM-GPU] Finished the matrix multiplication in " << duration
               << " sec." << std::endl;
@@ -70,15 +75,13 @@ class MatrixMultiplicationGPU {
     }
   }
 
-  void DistoryResult() {
-    delete[] result_;
-  }
+  void DistoryResult() { delete[] result_; }
 
  private:
   uint32_t* result_;
   uint32_t result_n_rows_;
   uint32_t result_n_cols_;
 };
-}  // namespace seu::luck::hybridcomp::client
+}  // namespace luck::parlib::apps
 
-#endif  // CLIENT_MATRIX_MULTIPLICATION_CPU_H
+#endif  // APPS_MATRIX_MULTIPLICATION_CPU_H

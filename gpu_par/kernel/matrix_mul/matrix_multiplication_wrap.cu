@@ -1,8 +1,12 @@
 #include "gpu_par/kernel/matrix_mul/matrix_multiplication_wrap.cuh"
 
-namespace luck {
-namespace gpu {
-namespace app {
+namespace luck::parlib::gpu::kernel::matrix_mul {
+
+using DeviceTaskData = luck::parlib::gpu::data::device::DeviceTaskData;
+using MatrixMulInputDeviceTaskData =
+    luck::parlib::gpu::data::device::MatrixMulInputDeviceTaskData;
+using MatrixMulOutputDeviceTaskData =
+    luck::parlib::gpu::data::device::MatrixMulOutputDeviceTaskData;
 
 struct Params {
   uint32_t* lhs_matrix;
@@ -42,15 +46,12 @@ MatrixMultiplicationWrap* MatrixMultiplicationWrap::GetInstance() {
   return ptr_;
 }
 
-void MatrixMultiplicationWrap::Do(
-    const cudaStream_t& stream,
-    luck::gpu::data::device::DeviceTaskData* device_input,
-    luck::gpu::data::device::DeviceTaskData* device_args,
-    luck::gpu::data::device::DeviceTaskData* device_output) {
-  auto input = reinterpret_cast<data::device::MatrixMulInputDeviceTaskData*>(
-      device_input);
-  auto output = reinterpret_cast<data::device::MatrixMulOutputDeviceTaskData*>(
-      device_output);
+void MatrixMultiplicationWrap::Do(const cudaStream_t& stream,
+                                  DeviceTaskData* device_input,
+                                  DeviceTaskData* device_args,
+                                  DeviceTaskData* device_output) {
+  auto input = reinterpret_cast<MatrixMulInputDeviceTaskData*>(device_input);
+  auto output = reinterpret_cast<MatrixMulOutputDeviceTaskData*>(device_output);
 
   Params params{.lhs_matrix = input->lhs_matrix_.GetPtr(),
                 .rhs_matrix = input->rhs_matrix_.GetPtr(),
@@ -65,6 +66,4 @@ void MatrixMultiplicationWrap::Do(
   MatrixMultiplicationKernel<<<dimGrid, dimBlock, 48 * 1024, stream>>>(params);
 }
 
-}  // namespace app
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::kernel::matrix_mul

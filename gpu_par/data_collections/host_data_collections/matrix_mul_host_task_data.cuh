@@ -1,15 +1,12 @@
-#ifndef LUCK_GPU_DATA_STRUCTURES_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH
-#define LUCK_GPU_DATA_STRUCTURES_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH
+#ifndef GPU_PAR_DATA_COLLECTIONS_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH
+#define GPU_PAR_DATA_COLLECTIONS_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH
 
 #include <stdint.h>
 
 #include "gpu_par/data_collections/host_buffer.cuh"
 #include "gpu_par/data_collections/host_task_data.cuh"
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace host {
+namespace luck::parlib::gpu::data::host {
 
 struct HostMatrixData : public HostTaskData {
   HostMatrixData(uint32_t* dat, uint32_t n_rows, uint32_t n_cols)
@@ -35,9 +32,6 @@ struct MatrixMulHostTaskData : public HostTaskData {
   HostMatrixData lhs_matrix;
   HostMatrixData rhs_matrix;
 };
-}  // namespace host
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::host
 
-#endif  // LUCK_GPU_DATA_STRUCTURES_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH
+#endif  // GPU_PAR_DATA_COLLECTIONS_HOST_DATA_COLLECTIONS_MATRIX_MUL_HOST_TASK_DATA_CUH

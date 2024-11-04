@@ -1,6 +1,6 @@
 #include "cpu_par/thread_pool.h"
 
-namespace com::graph::core::common {
+namespace luck::parlib::cpu {
 
 ThreadPool::ThreadPool(uint32_t num_threads)
     : internal_pool_((unsigned int)num_threads) {}
@@ -65,4 +65,4 @@ void ThreadPool::StopAndJoin() {
   internal_pool_.join();
 }
 
-}  // namespace com::graph::core::common
+}  // namespace luck::parlib::cpu

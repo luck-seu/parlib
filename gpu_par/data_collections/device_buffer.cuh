@@ -1,5 +1,5 @@
-#ifndef LUCK_GPU_DATA_COLLECTIONS_DEVICE_BUFFER_CUH
-#define LUCK_GPU_DATA_COLLECTIONS_DEVICE_BUFFER_CUH
+#ifndef GPU_PAR_DATA_COLLECTIONS_DEVICE_BUFFER_CUH
+#define GPU_PAR_DATA_COLLECTIONS_DEVICE_BUFFER_CUH
 
 #include <cuda_runtime.h>
 #include <stdint.h>
@@ -7,10 +7,7 @@
 #include "gpu_par/data_collections/host_buffer.cuh"
 #include "gpu_par/util/cuda_check.cuh"
 
-namespace luck {
-namespace gpu {
-namespace data {
-namespace device {
+namespace luck::parlib::gpu::data::device {
 
 // Class to manage buffers allocated on the device
 template <typename T>
@@ -51,7 +48,8 @@ class DeviceOwnedBuffer {
   DeviceOwnedBuffer(host::HostBuffer<T>&& h_buff) = delete;
 
   // @Brif: Constructor with buffer and optional stream
-  DeviceOwnedBuffer(const host::HostBuffer<T>& h_buf, const cudaStream_t& stream) {
+  DeviceOwnedBuffer(const host::HostBuffer<T>& h_buf,
+                    const cudaStream_t& stream) {
     Init(h_buf, stream);
   }
 
@@ -143,9 +141,7 @@ class DeviceOwnedBuffer {
   //   Size of the device buffer
   size_t GetSize() const { return s_; };
 
-  size_t GetElementSize() const {
-    return sizeof(T);
-  }
+  size_t GetElementSize() const { return sizeof(T); }
 
   void SetPtr(T* val) { ptr_ = val; }
 
@@ -155,9 +151,6 @@ class DeviceOwnedBuffer {
   T* ptr_ = nullptr;  // Pointer to device memory
   size_t s_ = 0;      // Size of the device memory allocation
 };
-}  // namespace device
-}  // namespace data
-}  // namespace gpu
-}  // namespace luck
+}  // namespace luck::parlib::gpu::data::device
 
-#endif  // LUCK_GPU_DATA_STRUCTURES_DEVICE_BUFFER_CUH
+#endif  // GPU_PAR_DATA_STRUCTURES_DEVICE_BUFFER_CUH
