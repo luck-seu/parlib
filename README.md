@@ -53,9 +53,9 @@ Applications that should be compiled by nvcc should ended with `_gpu.cpp` (e.g.,
 
 ## Acknowledgement
 
-This project originates from several parallel systems developed at the Shenzhen Institute of Computer Science:
+This project originates from several parallel systems developed at the Shenzhen Institute of Computer Science (SICS):
 - [MiniGraph](https://github.com/SICS-Fundamental-Research-Center/MiniGraph)
 - [Planar](https://github.com/SICS-Fundamental-Research-Center/MiniGraph)
 - [Hyperlocker](https://github.com/SICS-Fundamental-Research-Center/HyperBlocker)
 
-Thanks to their authors: Shuhao Liu (SICS), Xiaoke Zhu (BUAA), Yang Liu (BUAA).
+Thanks to their authors: Shuhao Liu (SICS), Xiaoke Zhu (Beihang University), Yang Liu (Beihang University).
