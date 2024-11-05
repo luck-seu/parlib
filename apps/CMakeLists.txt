@@ -4,6 +4,9 @@ project(parlib_apps LANGUAGES CXX CUDA)
 # Directories
 set(LIBRARY_OUTPUT_PATH ${PROJECT_ROOT_DIR}/lib)
 
+# Directories shortcuts
+set(APPS_PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
 #######################
 # Libraries
 #######################
@@ -19,11 +22,13 @@ include_directories(
 #######################
 file(GLOB APPS_SOURCES
         "*.cpp"
+        "${APPS_PROJECT_ROOT_DIR}/matrix_mul/*.cpp"
         )
 message(STATUS "APPS source files: ${APPS_SOURCES}")
 
 file(GLOB APPS_HEADERS
         "*.h"
+        "${APPS_PROJECT_ROOT_DIR}/matrix_mul/*.h"
         )
 message(STATUS "APPS header files: ${APPS_HEADERS}")
 
