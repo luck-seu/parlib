@@ -58,4 +58,4 @@ This project originates from several parallel systems developed at the Shenzhen 
 - [Planar](https://github.com/SICS-Fundamental-Research-Center/MiniGraph)
 - [Hyperlocker](https://github.com/SICS-Fundamental-Research-Center/HyperBlocker)
 
-Thanks to their authors: Shuhao Liu (SICS), Xiaoke Zhu (Beihang University), Yang Liu (Beihang University).
+Thanks to their authors: Shuhao Liu (SICS), Xiaoke Zhu (Beihang University), and Yang Liu (Beihang University).
