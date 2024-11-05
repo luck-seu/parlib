@@ -16,7 +16,7 @@ First, clone the project and install dependencies on your environment.
 # Make sure you have your public key has been uploaded to GitHub!
 git clone git@github.com:luck-seu/parlib.git
 # Install dependencies.
-$SRC_DIR=`parlib` # top-level MiniGraph source dir
+$SRC_DIR=`parlib` # top-level parlib source dir
 $cd $SRC_DIR
 $./dependencies.sh
 ```
